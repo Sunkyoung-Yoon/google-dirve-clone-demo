@@ -11,6 +11,10 @@ import CloudQueueIcon from "@mui/icons-material/CloudQueue";
 import { Modal } from "@mui/material";
 import { useState } from "react";
 
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db, storage } from "../firebase";
+
 const SidebarContainer = styled.div`
   margin-top: 10px;
 `;
@@ -117,11 +121,60 @@ const UploadingPara = styled.p`
 const Siderbar = () => {
   const [open, setOpen] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [file, setFile] = useState(null);
+
+  const handleFile = (e) => {
+    if (e.target.files[0]) {
+      setFile(e.target.files[0]);
+      console.log(file);
+    }
+  };
+
+  const handleUpload = (e) => {
+    e.preventDefault();
+    setUploading(true);
+
+    // Firebase Storage에 업로드할 파일 경로를 참조
+    const fileRef = ref(storage, `files/${file.name}`);
+
+    const fileSize = file.size;
+
+    // 파일을 Firebase Storage에 업로드
+    uploadBytes(fileRef, file)
+      .then((snapshot) => {
+        console.log(snapshot);
+
+        // 업로드된 파일의 다운로드 URL을 가져오기
+        getDownloadURL(fileRef).then((url) => {
+          // Firestore에 파일 정보를 추가
+          addDoc(collection(db, "myfiles"), {
+            timestamp: serverTimestamp(),
+            filename: file.name,
+            fileURL: url,
+            size: fileSize, // 업로드된 파일 크기
+          })
+            .then(() => {
+              setUploading(false);
+              setFile(null);
+              setOpen(false);
+            })
+            .catch((error) => {
+              console.error("파일 추가 실패:", error);
+              setUploading(false);
+            });
+        });
+      })
+      .catch((error) => {
+        console.error("파일 업로드 실패:", error);
+        setUploading(false);
+      });
+  };
+
   return (
     <>
       <Modal open={open} onClose={() => setOpen(false)}>
         <ModalPopup>
-          <form>
+          <form onSubmit={handleUpload}>
             <ModalHeading>
               <h3>Select file you want to upload</h3>
             </ModalHeading>
@@ -130,7 +183,11 @@ const Siderbar = () => {
                 <UploadingPara>Uploading...</UploadingPara>
               ) : (
                 <>
-                  <input type="file" className="modal__file" />
+                  <input
+                    type="file"
+                    className="modal__file"
+                    onChange={handleFile}
+                  />
                   <input type="submit" className="modal__submit" />
                 </>
               )}
