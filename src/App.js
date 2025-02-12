@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Siderbar from "./components/Siderbar";
+import Data from "./components/Data";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Header />
       <div className="App">
         <Siderbar />
+        <Data />
       </div>
     </>
   );
