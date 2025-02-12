@@ -15,3 +15,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App {
+  display: grid;
+  /* 각 컬럼의 너비 지정
+  - 첫 번째 컬럼 300x
+  - 두 번째 컬럼 auto
+  - 세 번째 컬럼 50px
+  */
+  grid-template-columns: 300px auto 50px;
+}
