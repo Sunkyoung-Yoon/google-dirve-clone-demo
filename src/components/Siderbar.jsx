@@ -105,9 +105,18 @@ const ModalBody = styled.div`
   }
 `;
 
+const UploadingPara = styled.p`
+  background: green;
+  color: #fff;
+  margin: 20px;
+  text-align: center;
+  padding: 10px;
+  letter-spacing: 1px;
+`;
+
 const Siderbar = () => {
   const [open, setOpen] = useState(true);
-
+  const [uploading, setUploading] = useState(false);
   return (
     <>
       <Modal open={open} onClose={() => setOpen(false)}>
@@ -117,8 +126,14 @@ const Siderbar = () => {
               <h3>Select file you want to upload</h3>
             </ModalHeading>
             <ModalBody>
-              <input type="file" className="modal__file" />
-              <input type="submit" className="modal__submit" />
+              {uploading ? (
+                <UploadingPara>Uploading...</UploadingPara>
+              ) : (
+                <>
+                  <input type="file" className="modal__file" />
+                  <input type="submit" className="modal__submit" />
+                </>
+              )}
             </ModalBody>
           </form>
         </ModalPopup>
