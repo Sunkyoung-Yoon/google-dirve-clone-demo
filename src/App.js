@@ -1,10 +1,14 @@
 import Header from "./components/Header";
+import Siderbar from "./components/Siderbar";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
-    </div>
+      <div className="App">
+        <Siderbar />
+      </div>
+    </>
   );
 }
 
