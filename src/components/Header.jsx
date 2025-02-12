@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import SearchIcon from "@mui/icons-material/Search";
+import FormatAlignCenterIcon from "@mui/icons-material/FormatAlignCenter";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import SettingsIcon from "@mui/icons-material/Settings";
+import AppsIcon from "@mui/icons-material/Apps";
+import { Avatar } from "@mui/material";
 
 const HeaderContainer = styled.div`
   display: grid;
@@ -57,8 +63,21 @@ const Header = () => {
         />
         <span>Drive</span>
       </HeaderLogo>
-      <div></div>
-      <div></div>
+      <HeaderSearch>
+        <SearchIcon />
+        <input type="text" placeholder="Search in Drive" />
+        <FormatAlignCenterIcon />
+      </HeaderSearch>
+      <HeaderIcons>
+        <span>
+          <HelpOutlineIcon />
+          <SettingsIcon />
+        </span>
+        <span>
+          <AppsIcon />
+          <Avatar />
+        </span>
+      </HeaderIcons>
     </HeaderContainer>
   );
 };
