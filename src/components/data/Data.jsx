@@ -12,7 +12,7 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { useEffect, useState } from "react";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 
 const Data = () => {

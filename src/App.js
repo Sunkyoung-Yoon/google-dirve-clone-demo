@@ -1,6 +1,6 @@
-import Header from "components/Header";
-import Siderbar from "components/Siderbar";
-import Data from "components/Data";
+import Header from "components/header/Header";
+import Siderbar from "components/sidebar/Siderbar";
+import Data from "components/data/Data";
 
 function App() {
   return (

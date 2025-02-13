@@ -22,7 +22,7 @@ import { useState } from "react";
 
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { db, storage } from "../firebase";
+import { db, storage } from "../../firebase";
 
 const Siderbar = () => {
   const [open, setOpen] = useState(false);
