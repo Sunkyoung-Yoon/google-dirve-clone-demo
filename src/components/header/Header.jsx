@@ -5,12 +5,15 @@ import {
   HeaderIcons,
 } from "styles/header/header.style";
 
-import SearchIcon from "@mui/icons-material/Search";
-import FormatAlignCenterIcon from "@mui/icons-material/FormatAlignCenter";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import SettingsIcon from "@mui/icons-material/Settings";
-import AppsIcon from "@mui/icons-material/Apps";
 import { Avatar } from "@mui/material";
+
+import {
+  SearchIcons,
+  FormatAlignCenterIcons,
+  HelpOutlineIcons,
+  SettingsIcons,
+  AppsIcons,
+} from "components/common/SvgIcons";
 
 const Header = () => {
   return (
@@ -23,17 +26,17 @@ const Header = () => {
         <span>Drive</span>
       </HeaderLogo>
       <HeaderSearch>
-        <SearchIcon />
+        <SearchIcons />
         <input type="text" placeholder="Search in Drive" />
-        <FormatAlignCenterIcon />
+        <FormatAlignCenterIcons />
       </HeaderSearch>
       <HeaderIcons>
         <span>
-          <HelpOutlineIcon />
-          <SettingsIcon />
+          <HelpOutlineIcons />
+          <SettingsIcons />
         </span>
         <span>
-          <AppsIcon />
+          <AppsIcons />
           <Avatar />
         </span>
       </HeaderIcons>

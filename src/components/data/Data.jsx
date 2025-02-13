@@ -6,11 +6,14 @@ import {
   DataListRow,
 } from "styles/data/data.style";
 
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import ListIcon from "@mui/icons-material/List";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import {
+  ArrowDropDownIcons,
+  ListIcons,
+  InfoOutlinedIcons,
+  InsertDriveFileIcons,
+  ArrowDownwardIcons,
+} from "components/common/SvgIcons";
+
 import { useEffect, useState } from "react";
 import { db } from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
@@ -53,18 +56,18 @@ const Data = () => {
       <DataHeader>
         <div className="headerLeft">
           <p>My Drive</p>
-          <ArrowDropDownIcon />
+          <ArrowDropDownIcons />
         </div>
         <div className="headerRight">
-          <ListIcon />
-          <InfoOutlinedIcon />
+          <ListIcons />
+          <InfoOutlinedIcons />
         </div>
       </DataHeader>
       <div>
         <DataGrid>
           {files.map((file) => (
             <DataFile key={file.id}>
-              <InsertDriveFileIcon />
+              <InsertDriveFileIcons />
               <p>{file.data.filename}</p>
             </DataFile>
           ))}
@@ -73,7 +76,7 @@ const Data = () => {
           <DataListRow>
             <p>
               <b>
-                Name <ArrowDownwardIcon />
+                Name <ArrowDownwardIcons />
               </b>
             </p>
             <p>
@@ -90,7 +93,7 @@ const Data = () => {
             <DataListRow key={file.id}>
               <a href={file.data.fileURL} target="_blank">
                 <p>
-                  <InsertDriveFileIcon /> {file.data.filename}
+                  <InsertDriveFileIcons /> {file.data.filename}
                 </p>
               </a>
               <p>Owner</p>

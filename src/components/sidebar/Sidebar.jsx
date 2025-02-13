@@ -9,13 +9,15 @@ import {
   UploadingPara,
 } from "styles/sidebar/sidebar.style";
 
-import MobileScreenShareIcon from "@mui/icons-material/MobileScreenShare";
-import DevicesIcon from "@mui/icons-material/Devices";
-import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
-import QueryBuilderOutlinedIcon from "@mui/icons-material/QueryBuilderOutlined";
-import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import CloudQueueIcon from "@mui/icons-material/CloudQueue";
+import {
+  MobileScreenShareIcon,
+  DevicesIcons,
+  PeopleAltIcon,
+  QueryBuilderIcon,
+  StarBorderIcon,
+  DeleteOutlineIcon,
+  CloudQueueIcons,
+} from "components/common/SvgIcons";
 
 import { Modal } from "@mui/material";
 import { useState } from "react";
@@ -114,30 +116,30 @@ const Siderbar = () => {
             <span>My Drive</span>
           </SidebarOption>
           <SidebarOption>
-            <DevicesIcon />
+            <DevicesIcons />
             <span>Computers</span>
           </SidebarOption>
           <SidebarOption>
-            <PeopleAltOutlinedIcon />
+            <PeopleAltIcon />
             <span>Shared with me</span>
           </SidebarOption>
           <SidebarOption>
-            <QueryBuilderOutlinedIcon />
+            <QueryBuilderIcon />
             <span>Recent</span>
           </SidebarOption>
           <SidebarOption>
-            <StarBorderOutlinedIcon />
+            <StarBorderIcon />
             <span>Starred</span>
           </SidebarOption>
           <SidebarOption>
-            <DeleteOutlineOutlinedIcon />
+            <DeleteOutlineIcon />
             <span>Trash</span>
           </SidebarOption>
         </SidebarOptions>
         <hr />
         <SidebarOptions>
           <div class="option">
-            <CloudQueueIcon />
+            <CloudQueueIcons />
             <span>Storage</span>
           </div>
           <div className="progress_bar">
