@@ -4,7 +4,7 @@ import {
   DataGrid,
   DataFile,
   DataListRow,
-} from "styles/data.style";
+} from "styles/data/data.style";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ListIcon from "@mui/icons-material/List";

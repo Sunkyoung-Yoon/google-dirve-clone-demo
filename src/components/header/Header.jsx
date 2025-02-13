@@ -3,7 +3,7 @@ import {
   HeaderLogo,
   HeaderSearch,
   HeaderIcons,
-} from "styles/header.style";
+} from "styles/header/header.style";
 
 import SearchIcon from "@mui/icons-material/Search";
 import FormatAlignCenterIcon from "@mui/icons-material/FormatAlignCenter";

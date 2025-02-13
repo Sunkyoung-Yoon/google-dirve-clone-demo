@@ -7,7 +7,7 @@ import {
   ModalHeading,
   ModalBody,
   UploadingPara,
-} from "styles/sidebar.style";
+} from "styles/sidebar/sidebar.style";
 
 import MobileScreenShareIcon from "@mui/icons-material/MobileScreenShare";
 import DevicesIcon from "@mui/icons-material/Devices";
